@@ -1,0 +1,12 @@
+{
+  "name": "indecision-react-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:rorybot/indecision-react-app.git",
+  "author": "Rory Hodgson <29726065+rorybot@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1"
+  }
+}

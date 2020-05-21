@@ -1,11 +1,11 @@
+'use strict';
 
-
-let template = React.createElement(
-  "h1",
-  { id: "someid" },
-  "Something new"
+var template = React.createElement(
+  'p',
+  null,
+  'This is JSX from app.js'
 );
 
-let appRoot = document.getElementById('app');
+var appRoot = document.getElementById('app');
 
-ReactDOM.render(template,appRoot)
+ReactDOM.render(template, appRoot);
