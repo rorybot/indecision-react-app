@@ -2,14 +2,10 @@ class IndecisionApp extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      options: ['Eat Chocolate', 'Make pie', 'Clean room']
-    }
+      options: props.options
+    };
     this.handleDeleteOptions = () => {
-      this.setState(()=>{
-        return {
-          options: []
-        }
-      })
+      this.setState(()=> ({ options: [] }))
     }
     this.handlePick = () => {
       const randomNum = Math.floor(Math.random() * this.state.options.length);
@@ -27,11 +23,10 @@ class IndecisionApp extends React.Component {
     }
   }
   render(){
-    const title = "Indecision App";
     const subtitle = "What're you gonna do?";
     return (
       <div>
-        <Header title={title} subtitle={subtitle}/>
+        <Header subtitle={subtitle}/>
         <Action
           hasOptions={this.state.options.length}
           handlePick={this.handlePick}
@@ -48,14 +43,22 @@ class IndecisionApp extends React.Component {
   }
 }
 
+IndecisionApp.defaultProps = {
+  options: []
+}
+
 
 const Header = (props) => {
   return (
     <div>
       <h1>{props.title}</h1>
-      <h2>{props.subtitle}</h2>
+      <h2>{props.subtitle && props.subtitle}</h2>
     </div>
   )
+}
+
+Header.defaultProps = {
+  title: 'Indecision'
 }
 const Action = (props) => {
   return (
@@ -120,4 +123,4 @@ class AddOption extends React.Component {
 
 
 
-ReactDOM.render(<IndecisionApp/>,document.getElementById('app'));
+ReactDOM.render(<IndecisionApp options={['Eat Chocolate', 'Make pie', 'Clean room']} />,document.getElementById('app'));
