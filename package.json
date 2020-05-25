@@ -5,9 +5,16 @@
   "repository": "git@github.com:rorybot/indecision-react-app.git",
   "author": "Rory Hodgson <29726065+rorybot@users.noreply.github.com>",
   "license": "MIT",
+  "scripts": {
+    "serve": "live-server public/",
+    "build": "babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch"
+  },
   "dependencies": {
+    "babel-cli": "6.24.1",
     "babel-preset-env": "1.5.2",
-    "babel-preset-react": "6.24.1"
+    "babel-preset-react": "6.24.1",
+    "live-server": "^1.2.1",
+    "webpack": "^4.43.0"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1"
